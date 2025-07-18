@@ -1,0 +1,61 @@
+{
+  "name": "@dataprism/tooling",
+  "version": "1.0.0",
+  "description": "DataPrism CLI, Build Tools, and Development Utilities",
+  "type": "module",
+  "bin": {
+    "dataprism": "./dist/cli/bin/dataprism.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npm run build:cli && npm run build:tools",
+    "build:cli": "cd packages/cli && npm run build",
+    "build:tools": "cd tools && npm run build",
+    "build:templates": "node scripts/copy-templates.js",
+    "test": "npm run test:cli && npm run test:tools",
+    "test:cli": "vitest run tests/cli",
+    "test:tools": "vitest run tests/tools",
+    "test:scaffolding": "vitest run tests/scaffolding",
+    "test:build-configs": "vitest run tests/build-configs",
+    "test:deployment": "vitest run tests/deployment",
+    "test:environment": "vitest run tests/environment",
+    "validate:dependencies": "node scripts/validate-dependencies.js",
+    "lint": "eslint \"**/*.{ts,tsx}\" --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.0",
+    "chalk": "^5.3.0",
+    "ora": "^7.0.0",
+    "fs-extra": "^11.1.0",
+    "glob": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/inquirer": "^9.0.0",
+    "@types/fs-extra": "^11.0.0",
+    "typescript": "^5.2.0",
+    "vitest": "^1.6.0",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0"
+  },
+  "keywords": [
+    "cli",
+    "build-tools",
+    "deployment",
+    "development",
+    "tooling",
+    "scaffolding"
+  ],
+  "author": "DataPrism Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srnarasim/dataprism-tooling.git"
+  }
+}
