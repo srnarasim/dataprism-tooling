@@ -10,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "npm run build:cli && npm run build:tools",
-    "build:cli": "cd packages/cli && npm run build",
+    "build:cli": "cd packages && npm run build",
     "build:tools": "cd tools && npm run build",
     "build:templates": "node scripts/copy-templates.js",
     "test": "npm run test:cli && npm run test:tools",

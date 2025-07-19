@@ -1,0 +1,21 @@
+{
+  "name": "@dataprism/build-tools",
+  "version": "0.1.0",
+  "description": "Build tools for DataPrism development",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo 'Tools tests not implemented yet'",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "fs-extra": "^11.1.0",
+    "glob": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.2.0"
+  }
+}
